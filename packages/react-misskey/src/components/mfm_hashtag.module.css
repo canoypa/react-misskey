@@ -1,0 +1,7 @@
+.root {
+  color: var(--hashtag);
+  text-decoration: none;
+}
+.root:hover {
+  text-decoration: underline;
+}
