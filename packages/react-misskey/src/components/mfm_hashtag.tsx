@@ -4,7 +4,7 @@ import styles from "./mfm_hashtag.module.css";
 
 type Props = {
   node: mfm.MfmHashtag;
-  host: URL | string;
+  host: string;
 };
 export const MfmHashtag: FC<Props> = ({ node, host }) => {
   const hostUrl = new URL(`https://${host}`);
