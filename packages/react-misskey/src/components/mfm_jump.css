@@ -1,0 +1,17 @@
+@keyframes mfm-animation-jump {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-16px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-8px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

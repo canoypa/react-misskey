@@ -1,0 +1,26 @@
+@keyframes mfm-animation-spin {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mfm-animation-spin-x {
+  0% {
+    transform: perspective(128px) rotateX(0);
+  }
+  to {
+    transform: perspective(128px) rotateX(360deg);
+  }
+}
+
+@keyframes mfm-animation-spin-y {
+  0% {
+    transform: perspective(128px) rotateY(0);
+  }
+  to {
+    transform: perspective(128px) rotateY(360deg);
+  }
+}
