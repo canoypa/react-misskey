@@ -1,0 +1,5 @@
+.root {
+  width: 2em;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
