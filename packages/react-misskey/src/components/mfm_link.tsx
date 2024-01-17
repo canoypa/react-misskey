@@ -1,4 +1,4 @@
-import mfm from "mfm-js";
+import type mfm from "mfm-js";
 import { FC } from "react";
 import styles from "./mfm_link.module.css";
 
