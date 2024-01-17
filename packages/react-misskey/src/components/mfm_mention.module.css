@@ -27,3 +27,7 @@
   vertical-align: bottom;
   border-radius: 9999px;
 }
+
+.remote {
+  opacity: 0.5;
+}
