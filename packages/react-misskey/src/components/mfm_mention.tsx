@@ -6,7 +6,7 @@ import styles from "./mfm_mention.module.css";
 
 type Props = {
   node: mfm.MfmMention;
-  host: URL | string;
+  host: string;
   isMe?: boolean;
 };
 export const MfmMention: FC<Props> = ({ node, host, isMe }) => {
