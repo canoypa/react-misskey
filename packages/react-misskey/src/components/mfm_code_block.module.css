@@ -1,0 +1,14 @@
+.root {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #d4d4d4;
+  background: #1e1e1e;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 8px;
+}
+
+.code {
+  font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+}
