@@ -1,0 +1,29 @@
+.root {
+  display: inline-block;
+
+  border-radius: 9999px;
+  padding: 4px 8px 4px 4px;
+
+  background-color: color-mix(in srgb, var(--mention) 10%, transparent);
+  color: var(--mention);
+
+  text-decoration: none;
+  font-size: 14px;
+}
+.root:hover {
+  text-decoration: underline;
+}
+.root.isMe {
+  background-color: color-mix(in srgb, var(--mentionMe) 10%, transparent);
+  color: var(--mentionMe);
+}
+
+.img {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  object-fit: cover;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  border-radius: 9999px;
+}
