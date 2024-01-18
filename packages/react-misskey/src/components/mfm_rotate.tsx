@@ -10,7 +10,7 @@ export const MfmRotate: FC<Props> = ({ node }) => {
     node.props.args.deg === true
       ? 0
       : typeof node.props.args.deg === "string"
-      ? parseInt(node.props.args.deg)
+      ? parseFloat(node.props.args.deg)
       : 90;
 
   return (

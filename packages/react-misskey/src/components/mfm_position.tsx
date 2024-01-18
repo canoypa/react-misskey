@@ -10,13 +10,13 @@ export const MfmPosition: FC<Props> = ({ node }) => {
     node.props.args.x === true
       ? 0
       : typeof node.props.args.x === "string"
-      ? parseInt(node.props.args.x)
+      ? parseFloat(node.props.args.x)
       : 0;
   const y =
     node.props.args.y === true
       ? 0
       : typeof node.props.args.y === "string"
-      ? parseInt(node.props.args.y)
+      ? parseFloat(node.props.args.y)
       : 0;
 
   return (
