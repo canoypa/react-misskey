@@ -32,7 +32,38 @@ import { MfmText } from "./mfm_text";
 import { MfmTwitch } from "./mfm_twitch";
 import { MfmX } from "./mfm_x";
 
-export { MfmEmojiCode, MfmHashtag, MfmLink, MfmMention };
+export {
+  MfmBg,
+  MfmBlur,
+  MfmBold,
+  MfmBounce,
+  MfmCenter,
+  MfmCodeBlock,
+  MfmEmojiCode,
+  MfmFg,
+  MfmFlip,
+  MfmFont,
+  MfmHashtag,
+  MfmInlineCode,
+  MfmJelly,
+  MfmJump,
+  MfmLink,
+  MfmMention,
+  MfmPlain,
+  MfmPosition,
+  MfmQuote,
+  MfmRainbow,
+  MfmRotate,
+  MfmScale,
+  MfmSearch,
+  MfmShake,
+  MfmSmall,
+  MfmSpin,
+  MfmTada,
+  MfmText,
+  MfmTwitch,
+  MfmX,
+};
 
 export const renderNode = (node: mfm.MfmNode) => {
   switch (node.type) {
