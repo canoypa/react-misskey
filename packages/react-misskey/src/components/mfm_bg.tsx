@@ -18,7 +18,13 @@ const normalizeHex = (hex: string) => {
 };
 
 const getStyles = (args: mfm.MfmFn["props"]["args"]) => {
-  const hex = normalizeHex((args.color ?? "f00") as string);
+  const colorArg =
+    args.color === true
+      ? "f00"
+      : typeof args.color === "string"
+      ? args.color
+      : "f00";
+  const hex = normalizeHex(colorArg);
 
   const r = parseInt(hex.slice(0, 2), 16);
   const g = parseInt(hex.slice(2, 4), 16);
