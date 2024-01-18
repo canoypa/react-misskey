@@ -8,6 +8,7 @@ type Props = {
 export const MfmFlip: FC<Props> = ({ node }) => {
   const args = node.props.args;
   const styles = {
+    display: "inline-block",
     transform:
       !args.h && !args.v
         ? "scale(-1,1)"

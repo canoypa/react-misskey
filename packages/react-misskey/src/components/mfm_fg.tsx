@@ -31,7 +31,7 @@ const getStyles = (args: mfm.MfmFn["props"]["args"]) => {
   const b = parseInt(hex.slice(4, 6), 16);
   const a = parseInt(hex.slice(6, 8), 16) / 255;
 
-  return { color: `rgb(${r} ${g} ${b} / ${a})` };
+  return { display: "inline-block", color: `rgb(${r} ${g} ${b} / ${a})` };
 };
 
 type Props = {
