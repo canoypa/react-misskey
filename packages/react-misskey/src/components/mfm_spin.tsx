@@ -13,6 +13,12 @@ export const MfmSpin: FC<Props> = ({ node }) => {
       : typeof node.props.args.speed === "string"
       ? node.props.args.speed
       : "1s";
+  const delay =
+    node.props.args.delay === true
+      ? "0s"
+      : typeof node.props.args.delay === "string"
+      ? node.props.args.delay
+      : "0s";
   const direction = node.props.args.left
     ? "reverse"
     : node.props.args.alternate
@@ -31,7 +37,7 @@ export const MfmSpin: FC<Props> = ({ node }) => {
     <span
       style={{
         display: "inline-block",
-        animation: `${speed} linear 0s infinite ${direction} both running ${name}`,
+        animation: `${speed} linear ${delay} infinite ${direction} both running ${name}`,
       }}
     >
       {renderNodes(node.children)}
