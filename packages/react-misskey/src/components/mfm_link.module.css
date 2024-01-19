@@ -1,11 +1,3 @@
-.root {
-  color: var(--link);
-  text-decoration: none;
-}
-.root:hover {
-  text-decoration: underline;
-}
-
 .protocol {
   opacity: 0.5;
 }

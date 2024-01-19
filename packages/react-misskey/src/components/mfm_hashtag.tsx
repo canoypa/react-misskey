@@ -1,5 +1,6 @@
 import type mfm from "mfm-js";
 import { FC } from "react";
+import { Link } from "./link";
 import styles from "./mfm_hashtag.module.css";
 
 type Props = {
@@ -11,13 +12,8 @@ export const MfmHashtag: FC<Props> = ({ node, host }) => {
   const url = new URL(`tags/${node.props.hashtag}`, hostUrl);
 
   return (
-    <a
-      href={url.toString()}
-      target="_blank"
-      rel="noreferrer"
-      className={styles.root}
-    >
+    <Link href={url.toString()} className={styles.root}>
       #{node.props.hashtag}
-    </a>
+    </Link>
   );
 };

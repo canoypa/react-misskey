@@ -1,5 +1,6 @@
 import type mfm from "mfm-js";
 import { FC } from "react";
+import { Link } from "./link";
 import styles from "./mfm_link.module.css";
 
 // TODO: 対応する https://misskey-hub.net/en/docs/for-users/features/mfm/#リンク
@@ -14,12 +15,7 @@ export const MfmLink: FC<Props> = ({ node, host }) => {
   const isLocalLink = url.hostname === host;
 
   return (
-    <a
-      href={url.toString()}
-      target="_blank"
-      rel="noreferrer"
-      className={styles.root}
-    >
+    <Link href={url.toString()}>
       {!isLocalLink && (
         <>
           <span className={styles.protocol}>{`${url.protocol}//`}</span>
@@ -35,6 +31,6 @@ export const MfmLink: FC<Props> = ({ node, host }) => {
       </span>
       {url.search && <span className={styles.search}>{url.search}</span>}
       {url.hash && <span className={styles.hash}>{url.hash}</span>}
-    </a>
+    </Link>
   );
 };
