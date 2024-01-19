@@ -74,7 +74,7 @@ export const renderNode = (node: mfm.MfmNode) => {
     case "center":
       return <MfmCenter node={node} />;
     case "emojiCode":
-      return <MfmEmojiCode node={node} host={""} />;
+      return <MfmEmojiCode node={node} host={""} large />;
     case "fn": {
       switch (node.props.name) {
         case "bg":
