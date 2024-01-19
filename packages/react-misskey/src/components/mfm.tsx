@@ -148,7 +148,7 @@ export const renderNode = (node: mfm.MfmNode) => {
     case "text":
       return <MfmText node={node} />;
     case "unicodeEmoji":
-      return toMfmString(node);
+      return <MfmUnicodeEmoji node={node} host={""} />;
     case "url":
       return toMfmString(node);
     default: {
