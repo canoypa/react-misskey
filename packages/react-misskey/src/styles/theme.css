@@ -6,7 +6,7 @@
 
 :where(.embed-misskey-theme) {
   line-height: 1.35;
-  font-size: 14.7px;
+  font-size: 16px;
   font-family: Hiragino Maru Gothic Pro, BIZ UDGothic, Roboto, HelveticaNeue,
     Arial, sans-serif;
   color: var(--fg);
