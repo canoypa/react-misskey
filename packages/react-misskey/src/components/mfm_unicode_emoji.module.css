@@ -1,4 +1,5 @@
 .root {
+  display: inline-block;
   height: 1.25em;
   vertical-align: -0.25em;
 }
