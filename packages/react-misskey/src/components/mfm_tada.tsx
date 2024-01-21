@@ -23,6 +23,7 @@ export const MfmTada: FC<Props> = ({ node, children }) => {
     <span
       style={{
         display: "inline-block",
+        fontSize: "150%",
         animation: `${speed} linear ${delay} infinite normal both running mfm-animation-tada`,
       }}
     >
