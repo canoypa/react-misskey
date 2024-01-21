@@ -1,0 +1,26 @@
+.details summary {
+  display: flex;
+  justify-content: center;
+  column-gap: 4px;
+  border-radius: 9999px;
+  margin-block: 4px;
+  width: 100%;
+  font-size: 0.9em;
+  padding: 6px 12px;
+  background-color: var(--buttonBg);
+  color: inherit;
+  border: none;
+  cursor: pointer;
+}
+.details summary:hover {
+  background-color: var(--buttonHoverBg);
+}
+.details:not([open]) summary .opened {
+  display: none;
+}
+.details:is([open]) summary .closed {
+  display: none;
+}
+.details:not([open]) div {
+  display: none;
+}
