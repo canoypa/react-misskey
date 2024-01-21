@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.name {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.host {
+  opacity: 0.5;
+}
