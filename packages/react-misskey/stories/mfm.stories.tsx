@@ -20,11 +20,13 @@ type Story = StoryObj<typeof Mfm>;
 export const Default: Story = {
   args: {
     text: "Hello World",
+    options: { host: "misskey.io", emojiHost: "misskey.io" },
   },
 };
 
 export const WithMfm: Story = {
   args: {
     text: "$[spin.y,speed=5s $[rainbow.speed=5s $[fg Misskey]]]",
+    options: { host: "misskey.io", emojiHost: "misskey.io" },
   },
 };
