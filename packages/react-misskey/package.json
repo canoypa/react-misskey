@@ -9,8 +9,8 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
+      "react-server": "./dist/index.server.js",
+      "default": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },

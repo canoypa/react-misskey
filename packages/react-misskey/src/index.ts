@@ -1,1 +1,1 @@
-export * from "./components/mfm";
+export * from "./components/note.client";
