@@ -3,6 +3,7 @@ import { toString as toMfmString } from "mfm-js";
 import { MfmBg } from "../components/mfm_bg";
 import { MfmBlur } from "../components/mfm_blur";
 import { MfmBold } from "../components/mfm_bold";
+import { MfmBorder } from "../components/mfm_border";
 import { MfmBounce } from "../components/mfm_bounce";
 import { MfmCenter } from "../components/mfm_center";
 import { MfmCodeBlock } from "../components/mfm_code_block";
@@ -63,6 +64,12 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
       );
     case "fn": {
       switch (node.props.name) {
+        case "border":
+          return (
+            <MfmBorder node={node}>
+              {renderNodes(node.children, options)}
+            </MfmBorder>
+          );
         case "bg":
           return (
             <MfmBg node={node}>{renderNodes(node.children, options)}</MfmBg>
