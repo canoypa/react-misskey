@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 800px;
+  background-color: var(--panel);
+  overflow: clip;
+  contain: content;
+}
