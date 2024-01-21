@@ -1,12 +1,11 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
-import { renderNodes } from "./mfm";
+import { FC, PropsWithChildren } from "react";
 import "./mfm_jelly.css";
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
-export const MfmJelly: FC<Props> = ({ node }) => {
+export const MfmJelly: FC<Props> = ({ node, children }) => {
   const speed =
     node.props.args.speed === true
       ? "1s"
@@ -27,7 +26,7 @@ export const MfmJelly: FC<Props> = ({ node }) => {
         animation: `${speed} linear ${delay} infinite normal both running mfm-animation-jelly`,
       }}
     >
-      {renderNodes(node.children)}
+      {children}
     </span>
   );
 };

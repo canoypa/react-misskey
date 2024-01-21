@@ -1,10 +1,9 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
-import { renderNodes } from "./mfm";
+import { FC, PropsWithChildren } from "react";
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmBold;
 };
-export const MfmBold: FC<Props> = ({ node }) => {
-  return <b>{renderNodes(node.children)}</b>;
+export const MfmBold: FC<Props> = ({ node, children }) => {
+  return <b>{children}</b>;
 };

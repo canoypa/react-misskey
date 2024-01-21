@@ -1,11 +1,10 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
-import { renderNodes } from "./mfm";
+import { FC, PropsWithChildren } from "react";
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
-export const MfmX: FC<Props> = ({ node }) => {
+export const MfmX: FC<Props> = ({ node, children }) => {
   const zoom =
     node.props.name === "x2"
       ? 200
@@ -21,7 +20,7 @@ export const MfmX: FC<Props> = ({ node }) => {
         fontSize: `${zoom}%`,
       }}
     >
-      {renderNodes(node.children)}
+      {children}
     </span>
   );
 };

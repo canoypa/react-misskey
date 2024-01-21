@@ -1,12 +1,11 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
-import { renderNodes } from "./mfm";
+import { FC, PropsWithChildren } from "react";
 import "./mfm_spin.css";
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
-export const MfmSpin: FC<Props> = ({ node }) => {
+export const MfmSpin: FC<Props> = ({ node, children }) => {
   const speed =
     node.props.args.speed === true
       ? "1s"
@@ -40,7 +39,7 @@ export const MfmSpin: FC<Props> = ({ node }) => {
         animation: `${speed} linear ${delay} infinite ${direction} both running ${name}`,
       }}
     >
-      {renderNodes(node.children)}
+      {children}
     </span>
   );
 };

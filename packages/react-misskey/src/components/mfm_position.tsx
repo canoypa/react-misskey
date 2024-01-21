@@ -1,11 +1,10 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
-import { renderNodes } from "./mfm";
+import { FC, PropsWithChildren } from "react";
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
-export const MfmPosition: FC<Props> = ({ node }) => {
+export const MfmPosition: FC<Props> = ({ node, children }) => {
   const x =
     node.props.args.x === true
       ? 0
@@ -26,7 +25,7 @@ export const MfmPosition: FC<Props> = ({ node }) => {
         transform: `translate(${x}em, ${y}em)`,
       }}
     >
-      {renderNodes(node.children)}
+      {children}
     </span>
   );
 };

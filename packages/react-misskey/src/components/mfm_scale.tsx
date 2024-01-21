@@ -1,11 +1,10 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
-import { renderNodes } from "./mfm";
+import { FC, PropsWithChildren } from "react";
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
-export const MfmScale: FC<Props> = ({ node }) => {
+export const MfmScale: FC<Props> = ({ node, children }) => {
   const x =
     node.props.args.x === true
       ? 1
@@ -26,7 +25,7 @@ export const MfmScale: FC<Props> = ({ node }) => {
         transform: `scale(${x}, ${y})`,
       }}
     >
-      {renderNodes(node.children)}
+      {children}
     </span>
   );
 };

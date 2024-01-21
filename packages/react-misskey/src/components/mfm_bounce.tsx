@@ -1,12 +1,11 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
-import { renderNodes } from "./mfm";
+import { FC, PropsWithChildren } from "react";
 import "./mfm_bounce.css";
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
-export const MfmBounce: FC<Props> = ({ node }) => {
+export const MfmBounce: FC<Props> = ({ node, children }) => {
   const speed =
     node.props.args.speed === true
       ? "1s"
@@ -27,7 +26,7 @@ export const MfmBounce: FC<Props> = ({ node }) => {
         animation: `${speed} linear ${delay} infinite normal both running mfm-animation-bounce`,
       }}
     >
-      {renderNodes(node.children)}
+      {children}
     </span>
   );
 };

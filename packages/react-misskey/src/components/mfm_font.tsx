@@ -1,6 +1,5 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
-import { renderNodes } from "./mfm";
+import { FC, PropsWithChildren } from "react";
 
 const getStyles = (args: mfm.MfmFn["props"]["args"]) => {
   if (args.serif) {
@@ -19,15 +18,15 @@ const getStyles = (args: mfm.MfmFn["props"]["args"]) => {
   return null;
 };
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
-export const MfmFont: FC<Props> = ({ node }) => {
+export const MfmFont: FC<Props> = ({ node, children }) => {
   const styles = getStyles(node.props.args);
 
   if (!styles) {
-    return <span>$[font {renderNodes(node.children)}]</span>;
+    return <span>$[font {children}]</span>;
   }
 
-  return <span style={styles}>{renderNodes(node.children)}</span>;
+  return <span style={styles}>{children}</span>;
 };

@@ -1,11 +1,10 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
-import { renderNodes } from "./mfm";
+import { FC, PropsWithChildren } from "react";
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
-export const MfmRotate: FC<Props> = ({ node }) => {
+export const MfmRotate: FC<Props> = ({ node, children }) => {
   const deg =
     node.props.args.deg === true
       ? 0
@@ -21,7 +20,7 @@ export const MfmRotate: FC<Props> = ({ node }) => {
         transformOrigin: "center",
       }}
     >
-      {renderNodes(node.children)}
+      {children}
     </span>
   );
 };

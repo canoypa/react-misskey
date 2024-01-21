@@ -1,6 +1,5 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
-import { renderNodes } from "./mfm";
+import { FC, PropsWithChildren } from "react";
 
 const normalizeHex = (hex: string) => {
   if (hex.length === 3) {
@@ -34,11 +33,11 @@ const getStyles = (args: mfm.MfmFn["props"]["args"]) => {
   return { display: "inline-block", color: `rgb(${r} ${g} ${b} / ${a})` };
 };
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
-export const MfmFg: FC<Props> = ({ node }) => {
+export const MfmFg: FC<Props> = ({ node, children }) => {
   const styles = getStyles(node.props.args);
 
-  return <span style={styles}>{renderNodes(node.children)}</span>;
+  return <span style={styles}>{children}</span>;
 };
