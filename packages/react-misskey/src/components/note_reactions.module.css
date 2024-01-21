@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.reaction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+  border: 1px solid var(--divider);
+  border-radius: 6px;
+  padding: 0 6px;
+  height: 42px;
+  font-size: 1.5em;
+  user-select: none;
+}
+
+.emoji {
+  height: 1.25em;
+  vertical-align: -0.25em;
+}
+
+.count {
+  line-height: 42px;
+  font-size: 0.7em;
+}
