@@ -44,6 +44,7 @@ export const Avatar: FC<Props> = ({
       )}
       {avatarDecorations?.map((decoration) => (
         <img
+          key={JSON.stringify(decoration)}
           src={decoration.url}
           alt=""
           style={{

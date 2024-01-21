@@ -42,20 +42,27 @@ export type MfmOptions = {
 export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
   const { host, emojiHost, largeEmoji } = options;
 
+  const key = JSON.stringify(node);
+
   switch (node.type) {
     case "blockCode":
-      return <MfmCodeBlock node={node} />;
+      return <MfmCodeBlock key={key} node={node} />;
     case "bold":
       return (
-        <MfmBold node={node}>{renderNodes(node.children, options)}</MfmBold>
+        <MfmBold key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmBold>
       );
     case "center":
       return (
-        <MfmCenter node={node}>{renderNodes(node.children, options)}</MfmCenter>
+        <MfmCenter key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmCenter>
       );
     case "emojiCode":
       return (
         <MfmEmojiCode
+          key={key}
           node={node}
           host={host}
           emojiHost={emojiHost}
@@ -66,73 +73,85 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
       switch (node.props.name) {
         case "border":
           return (
-            <MfmBorder node={node}>
+            <MfmBorder key={key} node={node}>
               {renderNodes(node.children, options)}
             </MfmBorder>
           );
         case "bg":
           return (
-            <MfmBg node={node}>{renderNodes(node.children, options)}</MfmBg>
+            <MfmBg key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmBg>
           );
         case "blur":
           return (
-            <MfmBlur node={node}>{renderNodes(node.children, options)}</MfmBlur>
+            <MfmBlur key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmBlur>
           );
         case "bounce":
           return (
-            <MfmBounce node={node}>
+            <MfmBounce key={key} node={node}>
               {renderNodes(node.children, options)}
             </MfmBounce>
           );
         case "fg":
           return (
-            <MfmFg node={node}>{renderNodes(node.children, options)}</MfmFg>
+            <MfmFg key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmFg>
           );
         case "flip":
           return (
-            <MfmFlip node={node}>{renderNodes(node.children, options)}</MfmFlip>
+            <MfmFlip key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmFlip>
           );
         case "font":
           return (
-            <MfmFont node={node}>{renderNodes(node.children, options)}</MfmFont>
+            <MfmFont key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmFont>
           );
         case "jelly":
           return (
-            <MfmJelly node={node}>
+            <MfmJelly key={key} node={node}>
               {renderNodes(node.children, options)}
             </MfmJelly>
           );
         case "jump":
           return (
-            <MfmJump node={node}>{renderNodes(node.children, options)}</MfmJump>
+            <MfmJump key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmJump>
           );
         case "position":
           return (
-            <MfmPosition node={node}>
+            <MfmPosition key={key} node={node}>
               {renderNodes(node.children, options)}
             </MfmPosition>
           );
         case "rainbow":
           return (
-            <MfmRainbow node={node}>
+            <MfmRainbow key={key} node={node}>
               {renderNodes(node.children, options)}
             </MfmRainbow>
           );
         case "rotate":
           return (
-            <MfmRotate node={node}>
+            <MfmRotate key={key} node={node}>
               {renderNodes(node.children, options)}
             </MfmRotate>
           );
         case "scale":
           return (
-            <MfmScale node={node}>
+            <MfmScale key={key} node={node}>
               {renderNodes(node.children, options)}
             </MfmScale>
           );
         case "shake":
           return (
-            <MfmShake node={node}>
+            <MfmShake key={key} node={node}>
               {renderNodes(node.children, options)}
             </MfmShake>
           );
@@ -140,62 +159,84 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
           return toMfmString(node);
         case "spin":
           return (
-            <MfmSpin node={node}>{renderNodes(node.children, options)}</MfmSpin>
+            <MfmSpin key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmSpin>
           );
         case "tada":
           return (
-            <MfmTada node={node}>{renderNodes(node.children, options)}</MfmTada>
+            <MfmTada key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmTada>
           );
         case "twitch":
           return (
-            <MfmTwitch node={node}>
+            <MfmTwitch key={key} node={node}>
               {renderNodes(node.children, options)}
             </MfmTwitch>
           );
         case "x2":
-          return <MfmX node={node}>{renderNodes(node.children, options)}</MfmX>;
+          return (
+            <MfmX key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmX>
+          );
         case "x3":
-          return <MfmX node={node}>{renderNodes(node.children, options)}</MfmX>;
+          return (
+            <MfmX key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmX>
+          );
         case "x4":
-          return <MfmX node={node}>{renderNodes(node.children, options)}</MfmX>;
+          return (
+            <MfmX key={key} node={node}>
+              {renderNodes(node.children, options)}
+            </MfmX>
+          );
         default:
           return toMfmString(node);
       }
     }
     case "hashtag":
-      return <MfmHashtag node={node} host={host} />;
+      return <MfmHashtag key={key} node={node} host={host} />;
     case "inlineCode":
-      return <MfmInlineCode node={node} />;
+      return <MfmInlineCode key={key} node={node} />;
     case "italic":
       return toMfmString(node);
     case "link":
-      return <MfmLink node={node} host={host} />;
+      return <MfmLink key={key} node={node} host={host} />;
     case "mathBlock":
       return toMfmString(node);
     case "mathInline":
       return toMfmString(node);
     case "mention":
-      return <MfmMention node={node} host={host} />;
+      return <MfmMention key={key} node={node} host={host} />;
     case "plain":
       return (
-        <MfmPlain node={node}>{renderNodes(node.children, options)}</MfmPlain>
+        <MfmPlain key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmPlain>
       );
     case "quote":
       return (
-        <MfmQuote node={node}>{renderNodes(node.children, options)}</MfmQuote>
+        <MfmQuote key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmQuote>
       );
     case "search":
-      return <MfmSearch node={node} />;
+      return <MfmSearch key={key} node={node} />;
     case "small":
       return (
-        <MfmSmall node={node}>{renderNodes(node.children, options)}</MfmSmall>
+        <MfmSmall key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmSmall>
       );
     case "strike":
       return toMfmString(node);
     case "text":
-      return <MfmText node={node} />;
+      return <MfmText key={key} node={node} />;
     case "unicodeEmoji":
-      return <MfmUnicodeEmoji node={node} host={host} />;
+      return <MfmUnicodeEmoji key={key} node={node} host={host} />;
     case "url":
       return toMfmString(node);
     default: {
