@@ -11,9 +11,12 @@ type Props = {
   mfmOptions: MfmOptions;
 };
 export const NoteHeader: FC<Props> = ({ user, userHost, mfmOptions }) => {
+  const hostUrl = new URL(`https://${userHost}`);
+  const userUrl = new URL(`@${user.username}`, hostUrl);
+
   return (
     <header className={styles.root}>
-      <Link href={""}>
+      <Link href={userUrl.toString()}>
         <Avatar
           avatarUrl={user.avatarUrl}
           avatarDecorations={user.avatarDecorations}
@@ -23,7 +26,7 @@ export const NoteHeader: FC<Props> = ({ user, userHost, mfmOptions }) => {
       </Link>
       <div>
         <div>
-          <Link href={""} className={styles.name}>
+          <Link href={userUrl.toString()} className={styles.name}>
             <Mfm text={user.name ?? ""} options={mfmOptions} />
           </Link>
         </div>
