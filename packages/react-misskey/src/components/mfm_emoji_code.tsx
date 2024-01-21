@@ -10,10 +10,13 @@ type Props = {
   large?: boolean;
 };
 export const MfmEmojiCode: FC<Props> = ({ node, host, emojiHost, large }) => {
+  const isLocal = host === emojiHost;
+
   const hostUrl = new URL(`https://${host}`);
-  const imageUrl = emojiHost
-    ? new URL(`emoji/${node.props.name}@${emojiHost}.webp`, hostUrl)
-    : new URL(`emoji/${node.props.name}.webp`, hostUrl);
+  const imageUrl = new URL(
+    `emoji/${node.props.name}@${isLocal ? "." : emojiHost}.webp`,
+    hostUrl
+  );
 
   const alt = `:${node.props.name}:`;
 
