@@ -13,6 +13,7 @@ import { MfmFlip } from "../components/mfm_flip";
 import { MfmFont } from "../components/mfm_font";
 import { MfmHashtag } from "../components/mfm_hashtag";
 import { MfmInlineCode } from "../components/mfm_inline_code";
+import { MfmItalic } from "../components/mfm_italic";
 import { MfmJelly } from "../components/mfm_jelly";
 import { MfmJump } from "../components/mfm_jump";
 import { MfmLink } from "../components/mfm_link";
@@ -202,7 +203,7 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
     case "inlineCode":
       return <MfmInlineCode key={key} node={node} />;
     case "italic":
-      return toMfmString(node);
+      return <MfmItalic key={key} node={node} />;
     case "link":
       return <MfmLink key={key} node={node} host={host} />;
     case "mathBlock":
