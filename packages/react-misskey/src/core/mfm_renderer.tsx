@@ -29,6 +29,7 @@ import { MfmSearch } from "../components/mfm_search";
 import { MfmShake } from "../components/mfm_shake";
 import { MfmSmall } from "../components/mfm_small";
 import { MfmSpin } from "../components/mfm_spin";
+import { MfmStrike } from "../components/mfm_strike";
 import { MfmTada } from "../components/mfm_tada";
 import { MfmText } from "../components/mfm_text";
 import { MfmTwitch } from "../components/mfm_twitch";
@@ -239,7 +240,11 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
         </MfmSmall>
       );
     case "strike":
-      return toMfmString(node);
+      return (
+        <MfmStrike key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmStrike>
+      );
     case "text":
       return <MfmText key={key} node={node} />;
     case "unicodeEmoji":
