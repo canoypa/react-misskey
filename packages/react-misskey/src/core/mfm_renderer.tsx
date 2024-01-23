@@ -16,6 +16,7 @@ import { MfmInlineCode } from "../components/mfm_inline_code";
 import { MfmItalic } from "../components/mfm_italic";
 import { MfmJelly } from "../components/mfm_jelly";
 import { MfmJump } from "../components/mfm_jump";
+import { MfmLink } from "../components/mfm_link";
 import { MfmMath } from "../components/mfm_math";
 import { MfmMention } from "../components/mfm_mention";
 import { MfmPlain } from "../components/mfm_plain";
@@ -206,7 +207,11 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
     case "italic":
       return <MfmItalic key={key} node={node} />;
     case "link":
-      return toMfmString(node);
+      return (
+        <MfmLink key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmLink>
+      );
     case "mathBlock":
       return <MfmMath key={key} node={node} />;
     case "mathInline":
