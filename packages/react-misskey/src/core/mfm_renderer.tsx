@@ -206,7 +206,11 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
     case "inlineCode":
       return <MfmInlineCode key={key} node={node} />;
     case "italic":
-      return <MfmItalic key={key} node={node} />;
+      return (
+        <MfmItalic key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmItalic>
+      );
     case "link":
       return (
         <MfmLink key={key} node={node}>
