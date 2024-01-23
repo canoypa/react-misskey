@@ -1,5 +1,6 @@
 import type mfm from "mfm-js";
 import { FC, PropsWithChildren } from "react";
+import { mfmArg } from "../core/mfm_args";
 
 const normalizeHex = (hex: string) => {
   if (hex.length === 3) {
@@ -17,12 +18,7 @@ const normalizeHex = (hex: string) => {
 };
 
 const getStyles = (args: mfm.MfmFn["props"]["args"]) => {
-  const colorArg =
-    args.color === true
-      ? "f00"
-      : typeof args.color === "string"
-      ? args.color
-      : "f00";
+  const colorArg = mfmArg(args.color, "f00");
   const hex = normalizeHex(colorArg);
 
   const r = parseInt(hex.slice(0, 2), 16);

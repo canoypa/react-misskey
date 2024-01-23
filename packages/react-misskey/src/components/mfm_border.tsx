@@ -1,5 +1,6 @@
 import { MfmFn } from "mfm-js";
 import { FC, PropsWithChildren } from "react";
+import { mfmArg } from "../core/mfm_args";
 
 const normalizeHex = (hex: string) => {
   if (hex.length === 3) {
@@ -16,7 +17,11 @@ const normalizeHex = (hex: string) => {
   return hex;
 };
 
-const resolveColor = (colorStr: string) => {
+const resolveColor = (colorStr: string | true) => {
+  if (colorStr === true) {
+    return colorStr;
+  }
+
   const hex = normalizeHex(colorStr);
 
   const r = parseInt(hex.slice(0, 2), 16);
@@ -31,30 +36,11 @@ type Props = PropsWithChildren & {
   node: MfmFn;
 };
 export const MfmBorder: FC<Props> = ({ node, children }) => {
-  const width =
-    node.props.args.width === true
-      ? 0
-      : typeof node.props.args.width === "string"
-      ? node.props.args.width
-      : 1;
-  const style =
-    node.props.args.style === true
-      ? "solid"
-      : typeof node.props.args.style === "string"
-      ? node.props.args.style
-      : "solid";
-  const color =
-    node.props.args.color === true
-      ? "var(--accent)"
-      : typeof node.props.args.color === "string"
-      ? resolveColor(node.props.args.color)
-      : "var(--accent)";
-  const radius =
-    node.props.args.radius === true
-      ? 0
-      : typeof node.props.args.radius === "string"
-      ? node.props.args.radius
-      : undefined;
+  const { args } = node.props;
+  const width = mfmArg(args.width, "0", "1");
+  const style = mfmArg(args.style, "solid");
+  const color = mfmArg(resolveColor(args.color), "var(--accent)");
+  const radius = mfmArg(args.radius, "0", null);
 
   return (
     <span

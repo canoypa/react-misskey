@@ -1,23 +1,14 @@
 import type mfm from "mfm-js";
 import { FC, PropsWithChildren } from "react";
+import { mfmArg } from "../core/mfm_args";
 import "./mfm_rainbow.css";
 
 type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
 export const MfmRainbow: FC<Props> = ({ node, children }) => {
-  const speed =
-    node.props.args.speed === true
-      ? "1s"
-      : typeof node.props.args.speed === "string"
-      ? node.props.args.speed
-      : "1s";
-  const delay =
-    node.props.args.delay === true
-      ? "0s"
-      : typeof node.props.args.delay === "string"
-      ? node.props.args.delay
-      : "0s";
+  const speed = mfmArg(node.props.args.speed, "1s");
+  const delay = mfmArg(node.props.args.delay, "0s");
 
   return (
     <span

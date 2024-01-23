@@ -1,22 +1,13 @@
 import type mfm from "mfm-js";
 import { FC, PropsWithChildren } from "react";
+import { mfmArg } from "../core/mfm_args";
 
 type Props = PropsWithChildren & {
   node: mfm.MfmFn;
 };
 export const MfmPosition: FC<Props> = ({ node, children }) => {
-  const x =
-    node.props.args.x === true
-      ? 0
-      : typeof node.props.args.x === "string"
-      ? parseFloat(node.props.args.x)
-      : 0;
-  const y =
-    node.props.args.y === true
-      ? 0
-      : typeof node.props.args.y === "string"
-      ? parseFloat(node.props.args.y)
-      : 0;
+  const x = mfmArg(node.props.args.x, "0");
+  const y = mfmArg(node.props.args.y, "0");
 
   return (
     <span
