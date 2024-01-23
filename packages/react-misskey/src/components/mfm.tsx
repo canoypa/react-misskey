@@ -16,7 +16,6 @@ import { MfmHashtag } from "./mfm_hashtag";
 import { MfmInlineCode } from "./mfm_inline_code";
 import { MfmJelly } from "./mfm_jelly";
 import { MfmJump } from "./mfm_jump";
-import { MfmLink } from "./mfm_link";
 import { MfmMention } from "./mfm_mention";
 import { MfmPlain } from "./mfm_plain";
 import { MfmPosition } from "./mfm_position";
@@ -31,6 +30,7 @@ import { MfmSpin } from "./mfm_spin";
 import { MfmTada } from "./mfm_tada";
 import { MfmText } from "./mfm_text";
 import { MfmTwitch } from "./mfm_twitch";
+import { MfmUrl } from "./mfm_url";
 import { MfmX } from "./mfm_x";
 
 export {
@@ -48,7 +48,6 @@ export {
   MfmInlineCode,
   MfmJelly,
   MfmJump,
-  MfmLink,
   MfmMention,
   MfmPlain,
   MfmPosition,
@@ -63,6 +62,7 @@ export {
   MfmTada,
   MfmText,
   MfmTwitch,
+  MfmUrl,
   MfmX,
 };
 

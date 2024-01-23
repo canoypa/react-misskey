@@ -1,15 +1,13 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
+import type { FC } from "react";
 import { Link } from "./link";
-import styles from "./mfm_link.module.css";
-
-// TODO: 対応する https://misskey-hub.net/en/docs/for-users/features/mfm/#リンク
+import styles from "./mfm_url.module.css";
 
 type Props = {
-  node: mfm.MfmLink;
+  node: mfm.MfmUrl;
   host: string;
 };
-export const MfmLink: FC<Props> = ({ node, host }) => {
+export const MfmUrl: FC<Props> = ({ node, host }) => {
   const url = new URL(node.props.url);
 
   const isLocalLink = url.hostname === host;

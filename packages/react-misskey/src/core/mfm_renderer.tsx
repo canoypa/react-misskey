@@ -16,7 +16,6 @@ import { MfmInlineCode } from "../components/mfm_inline_code";
 import { MfmItalic } from "../components/mfm_italic";
 import { MfmJelly } from "../components/mfm_jelly";
 import { MfmJump } from "../components/mfm_jump";
-import { MfmLink } from "../components/mfm_link";
 import { MfmMath } from "../components/mfm_math";
 import { MfmMention } from "../components/mfm_mention";
 import { MfmPlain } from "../components/mfm_plain";
@@ -33,6 +32,7 @@ import { MfmTada } from "../components/mfm_tada";
 import { MfmText } from "../components/mfm_text";
 import { MfmTwitch } from "../components/mfm_twitch";
 import { MfmUnicodeEmoji } from "../components/mfm_unicode_emoji";
+import { MfmUrl } from "../components/mfm_url";
 import { MfmX } from "../components/mfm_x";
 
 export type MfmOptions = {
@@ -206,7 +206,7 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
     case "italic":
       return <MfmItalic key={key} node={node} />;
     case "link":
-      return <MfmLink key={key} node={node} host={host} />;
+      return toMfmString(node);
     case "mathBlock":
       return <MfmMath key={key} node={node} />;
     case "mathInline":
@@ -240,7 +240,7 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
     case "unicodeEmoji":
       return <MfmUnicodeEmoji key={key} node={node} host={host} />;
     case "url":
-      return toMfmString(node);
+      return <MfmUrl key={key} node={node} host={host} />;
     default: {
       const check: never = node;
       return toMfmString(check);

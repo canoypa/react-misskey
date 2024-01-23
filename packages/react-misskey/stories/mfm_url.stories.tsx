@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { MfmLink } from "../src/components/mfm_link";
+import { MfmUrl } from "../src/components/mfm_url";
 import "../src/styles/theme.css";
 
-const meta: Meta<typeof MfmLink> = {
-  title: "MFM/Link",
-  component: MfmLink,
+const meta: Meta<typeof MfmUrl> = {
+  title: "MFM/Url",
+  component: MfmUrl,
   decorators: [
     (Story) => (
       <div className="embed-misskey-theme">
@@ -15,15 +15,14 @@ const meta: Meta<typeof MfmLink> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof MfmLink>;
+type Story = StoryObj<typeof MfmUrl>;
 
 export const Default: Story = {
   args: {
     node: {
-      type: "link",
+      type: "url",
       props: {
         url: "https://username:password@example.com:80/path/to?q=query#hash",
-        silent: false,
       },
       children: [],
     },
@@ -34,10 +33,9 @@ export const Default: Story = {
 export const Local: Story = {
   args: {
     node: {
-      type: "link",
+      type: "url",
       props: {
         url: "https://misskey.io/@ai",
-        silent: false,
       },
       children: [],
     },
@@ -48,31 +46,11 @@ export const Local: Story = {
 export const LocalIndex: Story = {
   args: {
     node: {
-      type: "link",
+      type: "url",
       props: {
         url: "https://misskey.io/",
-        silent: false,
       },
       children: [],
-    },
-    host: "misskey.io",
-  },
-};
-
-export const DefaultLink: Story = {
-  args: {
-    node: {
-      type: "link",
-      props: {
-        url: "https://misskey.io/path/to",
-        silent: false,
-      },
-      children: [
-        {
-          type: "text",
-          props: { text: "MISSKEY.IO" },
-        },
-      ],
     },
     host: "misskey.io",
   },
