@@ -1,3 +1,7 @@
+.root {
+  color: var(--link);
+}
+
 .protocol {
   opacity: 0.5;
 }

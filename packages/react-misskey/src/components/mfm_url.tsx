@@ -13,7 +13,7 @@ export const MfmUrl: FC<Props> = ({ node, host }) => {
   const isLocalLink = url.hostname === host;
 
   return (
-    <Link href={url.toString()}>
+    <Link href={url.toString()} className={styles.root}>
       {!isLocalLink && (
         <>
           <span className={styles.protocol}>{`${url.protocol}//`}</span>
