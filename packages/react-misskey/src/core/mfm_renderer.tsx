@@ -17,6 +17,7 @@ import { MfmItalic } from "../components/mfm_italic";
 import { MfmJelly } from "../components/mfm_jelly";
 import { MfmJump } from "../components/mfm_jump";
 import { MfmLink } from "../components/mfm_link";
+import { MfmMath } from "../components/mfm_math";
 import { MfmMention } from "../components/mfm_mention";
 import { MfmPlain } from "../components/mfm_plain";
 import { MfmPosition } from "../components/mfm_position";
@@ -207,9 +208,9 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
     case "link":
       return <MfmLink key={key} node={node} host={host} />;
     case "mathBlock":
-      return toMfmString(node);
+      return <MfmMath key={key} node={node} />;
     case "mathInline":
-      return toMfmString(node);
+      return <MfmMath key={key} node={node} />;
     case "mention":
       return <MfmMention key={key} node={node} host={host} />;
     case "plain":
