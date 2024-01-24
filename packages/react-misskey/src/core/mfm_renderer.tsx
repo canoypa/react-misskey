@@ -24,6 +24,7 @@ import { MfmPosition } from "../components/mfm_position";
 import { MfmQuote } from "../components/mfm_quote";
 import { MfmRainbow } from "../components/mfm_rainbow";
 import { MfmRotate } from "../components/mfm_rotate";
+import { MfmRuby } from "../components/mfm_ruby";
 import { MfmScale } from "../components/mfm_scale";
 import { MfmSearch } from "../components/mfm_search";
 import { MfmShake } from "../components/mfm_shake";
@@ -75,6 +76,32 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
       );
     case "fn": {
       switch (node.props.name) {
+        case "ruby": {
+          if (node.children.length === 1) {
+            const child = node.children[0];
+            const childStr = child.type === "text" ? child.props.text : "";
+
+            const [text, ruby] = childStr.split(" ");
+
+            return (
+              <MfmRuby key={key} node={node} ruby={ruby}>
+                {text}
+              </MfmRuby>
+            );
+          }
+
+          const lastChild = node.children[node.children.length - 1];
+          const ruby = lastChild.type === "text" ? lastChild.props.text : "";
+
+          const children = node.children.slice(0, -1);
+
+          return (
+            <MfmRuby key={key} node={node} ruby={ruby}>
+              {renderNodes(children, options)}
+            </MfmRuby>
+          );
+        }
+
         case "border":
           return (
             <MfmBorder key={key} node={node}>
