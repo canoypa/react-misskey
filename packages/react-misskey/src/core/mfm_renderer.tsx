@@ -38,15 +38,17 @@ import { MfmUnicodeEmoji } from "../components/mfm_unicode_emoji";
 import { MfmUnixtime } from "../components/mfm_unixtime";
 import { MfmUrl } from "../components/mfm_url";
 import { MfmX } from "../components/mfm_x";
+import { nyaize as doNyaize } from "./nyaize";
 
 export type MfmOptions = {
   host: string;
   emojiHost: string;
   largeEmoji?: boolean;
+  nyaize?: boolean;
 };
 
 export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
-  const { host, emojiHost, largeEmoji } = options;
+  const { host, emojiHost, largeEmoji, nyaize } = options;
 
   const key = JSON.stringify(node);
 
@@ -85,8 +87,12 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
             const [text, ruby] = childStr.split(" ");
 
             return (
-              <MfmRuby key={key} node={node} ruby={ruby}>
-                {text}
+              <MfmRuby
+                key={key}
+                node={node}
+                ruby={nyaize ? doNyaize(ruby) : ruby}
+              >
+                {nyaize ? doNyaize(text) : text}
               </MfmRuby>
             );
           }
@@ -311,7 +317,11 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
         </MfmStrike>
       );
     case "text":
-      return <MfmText key={key} node={node} />;
+      return (
+        <MfmText key={key} node={node}>
+          {nyaize ? doNyaize(node.props.text) : node.props.text}
+        </MfmText>
+      );
     case "unicodeEmoji":
       return <MfmUnicodeEmoji key={key} node={node} host={host} />;
     case "url":
