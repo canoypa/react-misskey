@@ -35,6 +35,7 @@ import { MfmTada } from "../components/mfm_tada";
 import { MfmText } from "../components/mfm_text";
 import { MfmTwitch } from "../components/mfm_twitch";
 import { MfmUnicodeEmoji } from "../components/mfm_unicode_emoji";
+import { MfmUnixtime } from "../components/mfm_unixtime";
 import { MfmUrl } from "../components/mfm_url";
 import { MfmX } from "../components/mfm_x";
 
@@ -100,6 +101,39 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
               {renderNodes(children, options)}
             </MfmRuby>
           );
+        }
+
+        case "unixtime": {
+          const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+          });
+
+          const child = node.children[0];
+          const childStr = child.type === "text" ? child.props.text : "";
+
+          try {
+            const unixtime = parseInt(childStr, 10);
+            const date = new Date(unixtime * 1000);
+
+            const text = dateFormatter.format(date);
+
+            return (
+              <MfmUnixtime key={key} node={node} dateTime={date.toISOString()}>
+                {text}
+              </MfmUnixtime>
+            );
+          } catch (e) {
+            return (
+              <MfmUnixtime key={key} node={node} dateTime={""}>
+                日付の解析に失敗
+              </MfmUnixtime>
+            );
+          }
         }
 
         case "border":
