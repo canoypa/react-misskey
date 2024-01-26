@@ -13,24 +13,30 @@ import { MfmFlip } from "../components/mfm_flip";
 import { MfmFont } from "../components/mfm_font";
 import { MfmHashtag } from "../components/mfm_hashtag";
 import { MfmInlineCode } from "../components/mfm_inline_code";
+import { MfmItalic } from "../components/mfm_italic";
 import { MfmJelly } from "../components/mfm_jelly";
 import { MfmJump } from "../components/mfm_jump";
 import { MfmLink } from "../components/mfm_link";
+import { MfmMath } from "../components/mfm_math";
 import { MfmMention } from "../components/mfm_mention";
 import { MfmPlain } from "../components/mfm_plain";
 import { MfmPosition } from "../components/mfm_position";
 import { MfmQuote } from "../components/mfm_quote";
 import { MfmRainbow } from "../components/mfm_rainbow";
 import { MfmRotate } from "../components/mfm_rotate";
+import { MfmRuby } from "../components/mfm_ruby";
 import { MfmScale } from "../components/mfm_scale";
 import { MfmSearch } from "../components/mfm_search";
 import { MfmShake } from "../components/mfm_shake";
 import { MfmSmall } from "../components/mfm_small";
 import { MfmSpin } from "../components/mfm_spin";
+import { MfmStrike } from "../components/mfm_strike";
 import { MfmTada } from "../components/mfm_tada";
 import { MfmText } from "../components/mfm_text";
 import { MfmTwitch } from "../components/mfm_twitch";
 import { MfmUnicodeEmoji } from "../components/mfm_unicode_emoji";
+import { MfmUnixtime } from "../components/mfm_unixtime";
+import { MfmUrl } from "../components/mfm_url";
 import { MfmX } from "../components/mfm_x";
 
 export type MfmOptions = {
@@ -71,6 +77,65 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
       );
     case "fn": {
       switch (node.props.name) {
+        case "ruby": {
+          if (node.children.length === 1) {
+            const child = node.children[0];
+            const childStr = child.type === "text" ? child.props.text : "";
+
+            const [text, ruby] = childStr.split(" ");
+
+            return (
+              <MfmRuby key={key} node={node} ruby={ruby}>
+                {text}
+              </MfmRuby>
+            );
+          }
+
+          const lastChild = node.children[node.children.length - 1];
+          const ruby = lastChild.type === "text" ? lastChild.props.text : "";
+
+          const children = node.children.slice(0, -1);
+
+          return (
+            <MfmRuby key={key} node={node} ruby={ruby}>
+              {renderNodes(children, options)}
+            </MfmRuby>
+          );
+        }
+
+        case "unixtime": {
+          const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+          });
+
+          const child = node.children[0];
+          const childStr = child.type === "text" ? child.props.text : "";
+
+          try {
+            const unixtime = parseInt(childStr, 10);
+            const date = new Date(unixtime * 1000);
+
+            const text = dateFormatter.format(date);
+
+            return (
+              <MfmUnixtime key={key} node={node} dateTime={date.toISOString()}>
+                {text}
+              </MfmUnixtime>
+            );
+          } catch (e) {
+            return (
+              <MfmUnixtime key={key} node={node} dateTime={""}>
+                日付の解析に失敗
+              </MfmUnixtime>
+            );
+          }
+        }
+
         case "border":
           return (
             <MfmBorder key={key} node={node}>
@@ -202,13 +267,21 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
     case "inlineCode":
       return <MfmInlineCode key={key} node={node} />;
     case "italic":
-      return toMfmString(node);
+      return (
+        <MfmItalic key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmItalic>
+      );
     case "link":
-      return <MfmLink key={key} node={node} host={host} />;
+      return (
+        <MfmLink key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmLink>
+      );
     case "mathBlock":
-      return toMfmString(node);
+      return <MfmMath key={key} node={node} />;
     case "mathInline":
-      return toMfmString(node);
+      return <MfmMath key={key} node={node} />;
     case "mention":
       return <MfmMention key={key} node={node} host={host} />;
     case "plain":
@@ -232,13 +305,17 @@ export const renderNode = (node: mfm.MfmNode, options: MfmOptions) => {
         </MfmSmall>
       );
     case "strike":
-      return toMfmString(node);
+      return (
+        <MfmStrike key={key} node={node}>
+          {renderNodes(node.children, options)}
+        </MfmStrike>
+      );
     case "text":
       return <MfmText key={key} node={node} />;
     case "unicodeEmoji":
       return <MfmUnicodeEmoji key={key} node={node} host={host} />;
     case "url":
-      return toMfmString(node);
+      return <MfmUrl key={key} node={node} host={host} />;
     default: {
       const check: never = node;
       return toMfmString(check);

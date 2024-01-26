@@ -1,0 +1,23 @@
+.root {
+  color: var(--link);
+}
+
+.protocol {
+  opacity: 0.5;
+}
+
+.hostname {
+  font-weight: 700;
+}
+
+.pathname {
+  opacity: 0.7;
+}
+
+.search {
+  opacity: 0.5;
+}
+
+.hash {
+  font-style: italic;
+}

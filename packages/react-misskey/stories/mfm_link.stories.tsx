@@ -27,53 +27,6 @@ export const Default: Story = {
       },
       children: [],
     },
-    host: "misskey.io",
-  },
-};
-
-export const Local: Story = {
-  args: {
-    node: {
-      type: "link",
-      props: {
-        url: "https://misskey.io/@ai",
-        silent: false,
-      },
-      children: [],
-    },
-    host: "misskey.io",
-  },
-};
-
-export const LocalIndex: Story = {
-  args: {
-    node: {
-      type: "link",
-      props: {
-        url: "https://misskey.io/",
-        silent: false,
-      },
-      children: [],
-    },
-    host: "misskey.io",
-  },
-};
-
-export const DefaultLink: Story = {
-  args: {
-    node: {
-      type: "link",
-      props: {
-        url: "https://misskey.io/path/to",
-        silent: false,
-      },
-      children: [
-        {
-          type: "text",
-          props: { text: "MISSKEY.IO" },
-        },
-      ],
-    },
-    host: "misskey.io",
+    children: "Link",
   },
 };

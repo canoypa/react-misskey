@@ -1,0 +1,12 @@
+.root {
+  display: inline-flex;
+  column-gap: 0.25em;
+  font-size: 90%;
+  border: solid 1px var(--divider);
+  border-radius: 999px;
+  padding: 4px 10px 4px 6px;
+}
+
+.root svg {
+  height: 1.4em;
+}
