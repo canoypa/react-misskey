@@ -21,7 +21,9 @@ export const NotePresent: FC<Props> = ({ note, host }) => {
   const url = new URL(`/notes/${note.id}`, `https://${host}`);
   const emojiHost = note.user.host ?? host;
 
-  const bodyMfmOptions = { host, emojiHost, largeEmoji: true };
+  const nyaize = note.user.isCat;
+
+  const bodyMfmOptions = { host, emojiHost, largeEmoji: true, nyaize };
 
   return (
     <NoteContainer>

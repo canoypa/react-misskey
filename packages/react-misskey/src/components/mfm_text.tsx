@@ -1,9 +1,9 @@
 import type mfm from "mfm-js";
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 
-type Props = {
+type Props = PropsWithChildren & {
   node: mfm.MfmText;
 };
-export const MfmText: FC<Props> = ({ node }) => {
-  return node.props.text;
+export const MfmText: FC<Props> = ({ node, children }) => {
+  return children;
 };
