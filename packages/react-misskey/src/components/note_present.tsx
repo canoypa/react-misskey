@@ -14,7 +14,7 @@ type Props = {
   host: string;
 };
 export const NotePresent: FC<Props> = ({ note, host }) => {
-  if (!note.text || note.localOnly) {
+  if (note.isHidden || note.localOnly) {
     return <NoteContainer>ノートを表示できません</NoteContainer>;
   }
 

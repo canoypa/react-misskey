@@ -3,7 +3,7 @@ import { Mfm, MfmOptions } from "./mfm";
 import styles from "./note_body.module.css";
 
 type Props = {
-  text: string;
+  text: string | null;
   hasCw: boolean;
   mfmOptions: MfmOptions;
 };
@@ -14,16 +14,18 @@ export const NoteBody: FC<Props> = ({ text, hasCw, mfmOptions }) => {
         <summary>
           <span className={styles.closed}>
             <b>もっと見る</b>
-            <span>({text.length}文字)</span>
+            {text && <span>({text.length}文字)</span>}
           </span>
           <span className={styles.opened}>
             <b>隠す</b>
           </span>
         </summary>
-        <Mfm text={text} options={mfmOptions} />
+        {text && <Mfm text={text} options={mfmOptions} />}
       </details>
     );
   }
+
+  if (!text) return null;
 
   return <Mfm text={text} options={mfmOptions} />;
 };
