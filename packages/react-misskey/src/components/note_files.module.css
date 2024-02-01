@@ -1,0 +1,39 @@
+.root {
+  display: grid;
+  gap: 8px;
+}
+.singleFile {
+  min-height: 64px;
+  max-height: 360px;
+}
+.multiFile {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.twoFile {
+  grid-template: 1fr 1fr / 1fr;
+}
+.threeFile {
+  grid-template: 1fr 1fr / 1fr 0.5fr;
+}
+.threeFile .imageContainer:first-child {
+  grid-row: span 2;
+}
+.fourFile {
+  grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.imageContainer {
+  height: 100%;
+
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

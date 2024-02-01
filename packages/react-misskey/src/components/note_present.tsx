@@ -5,6 +5,7 @@ import { NoteActions } from "./note_actions";
 import { NoteBody } from "./note_body";
 import { NoteContainer } from "./note_container";
 import { NoteCreatedAt } from "./note_created_at";
+import { NoteFiles } from "./note_files";
 import { NoteFooter } from "./note_footer";
 import { NoteHeader } from "./note_header";
 import { NoteReactions } from "./note_reactions";
@@ -38,6 +39,7 @@ export const NotePresent: FC<Props> = ({ note, host }) => {
         hasCw={!!note.cw}
         mfmOptions={bodyMfmOptions}
       />
+      {note.files && <NoteFiles files={note.files} />}
       <NoteFooter>
         <NoteCreatedAt createdAt={note.createdAt} noteUrl={url} />
         {Object.keys(note.reactions).length > 0 && (
