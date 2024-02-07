@@ -39,7 +39,7 @@ export const NotePresent: FC<Props> = ({ note, host }) => {
         hasCw={!!note.cw}
         mfmOptions={bodyMfmOptions}
       />
-      {note.files && <NoteFiles files={note.files} />}
+      {note.poll && <NotePoll poll={note.poll} />}
       <NoteFooter>
         <NoteCreatedAt createdAt={note.createdAt} noteUrl={url} />
         {Object.keys(note.reactions).length > 0 && (
