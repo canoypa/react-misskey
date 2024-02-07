@@ -2,6 +2,7 @@
   position: relative;
   width: 58px;
   height: 58px;
+  user-select: none;
 }
 
 .avatar {
