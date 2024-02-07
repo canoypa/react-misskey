@@ -8,6 +8,7 @@ import { NoteCreatedAt } from "./note_created_at";
 import { NoteFiles } from "./note_files";
 import { NoteFooter } from "./note_footer";
 import { NoteHeader } from "./note_header";
+import { NotePoll } from "./note_poll";
 import { NoteReactions } from "./note_reactions";
 
 type Props = {
@@ -39,6 +40,7 @@ export const NotePresent: FC<Props> = ({ note, host }) => {
         hasCw={!!note.cw}
         mfmOptions={bodyMfmOptions}
       />
+      {note.files && note.files.length > 0 && <NoteFiles files={note.files} />}
       {note.poll && <NotePoll poll={note.poll} />}
       <NoteFooter>
         <NoteCreatedAt createdAt={note.createdAt} noteUrl={url} />
