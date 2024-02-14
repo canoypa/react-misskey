@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { Note } from "react-misskey";
 
+export const revalidate = 60 * 60 * 24;
+
 type Props = {
   searchParams: {
     host?: string | string[];
