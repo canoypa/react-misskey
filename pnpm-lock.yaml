@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       turbo:
-        specifier: ^1.11.3
-        version: 1.11.3
+        specifier: ^1.12.5
+        version: 1.12.5
       vercel:
-        specifier: ^33.5.1
-        version: 33.5.1
+        specifier: ^33.5.5
+        version: 33.5.5
 
   app:
     dependencies:
@@ -1738,8 +1738,8 @@ packages:
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
     dev: true
 
-  /@fastify/busboy@2.1.0:
-    resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
+  /@fastify/busboy@2.1.1:
+    resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
     dev: true
 
@@ -1903,6 +1903,11 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: true
 
+  /@jridgewell/resolve-uri@3.1.2:
+    resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
+    engines: {node: '>=6.0.0'}
+    dev: true
+
   /@jridgewell/set-array@1.1.2:
     resolution: {integrity: sha512-xnkseuNADM0gt2bs+BvhO0p78Mk762YnZdsuzFV018NoG1Sj1SCQvpSqa7XUaTam5vAGasABV9qXASMKnFMwMw==}
     engines: {node: '>=6.0.0'}
@@ -1922,7 +1927,7 @@ packages:
   /@jridgewell/trace-mapping@0.3.9:
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
     dependencies:
-      '@jridgewell/resolve-uri': 3.1.1
+      '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
@@ -1941,7 +1946,7 @@ packages:
       nopt: 5.0.0
       npmlog: 5.0.1
       rimraf: 3.0.2
-      semver: 7.5.4
+      semver: 7.6.0
       tar: 6.2.0
     transitivePeerDependencies:
       - encoding
@@ -4082,8 +4087,8 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vercel/build-utils@7.7.0:
-    resolution: {integrity: sha512-dYE0QKnRj9tN1F2AAKHagh3QkgQhz7AWcrRqnp5gjEp74EnxBKJIcZe5qqyKANMCLQ1e96RYy1pQB3zPMGeEzg==}
+  /@vercel/build-utils@7.8.0:
+    resolution: {integrity: sha512-kYABisJ/Fzn8eYX27nEKnUhtFvW/8oBGGzPWVSgiN9pwtAa0IYCqFGIsg9EbWiXvBSrVuiS7++k6KU+rEtKs1w==}
     dev: true
 
   /@vercel/error-utils@2.0.2:
@@ -4125,11 +4130,11 @@ packages:
       web-vitals: 0.2.4
     dev: true
 
-  /@vercel/gatsby-plugin-vercel-builder@2.0.18:
-    resolution: {integrity: sha512-SbYV8ZBnROHJzS5DbFgSZ3Szp6UiY28DyHwtJ8cJ3z82tnCgIVqRMthUx/icPUZlHXKex4y+QhOWpyqopvEyqQ==}
+  /@vercel/gatsby-plugin-vercel-builder@2.0.20:
+    resolution: {integrity: sha512-CIc2AlXE3kSGnYfYDUgt6+Eha1kByFhhAM2TZNKFIW8AkjP4jly2YZxUoD2GpdRY+TfOlfDD5GzPjrjEa7pttw==}
     dependencies:
       '@sinclair/typebox': 0.25.24
-      '@vercel/build-utils': 7.7.0
+      '@vercel/build-utils': 7.8.0
       '@vercel/routing-utils': 3.1.0
       esbuild: 0.14.47
       etag: 1.8.1
@@ -4147,17 +4152,17 @@ packages:
       ts-morph: 12.0.0
     dev: true
 
-  /@vercel/next@4.1.1:
-    resolution: {integrity: sha512-bc+UimeP+Swwye10LNcB93uaGq2lMuPUhB3den0GBJ+x/aSFmSwVziohF+p1n4ozFGEUx6Qx/CyZcfopuO5jZA==}
+  /@vercel/next@4.1.5:
+    resolution: {integrity: sha512-7tylGnpMi5UIt+TUhGhfOcu8LYjJqZsTCjnzHMh1AMhl/tyl8xecxRKGrKxqxnQkqh2yO8tO5vg8KiFpCeGqPg==}
     dependencies:
-      '@vercel/nft': 0.26.3
+      '@vercel/nft': 0.26.4
     transitivePeerDependencies:
       - encoding
       - supports-color
     dev: true
 
-  /@vercel/nft@0.26.3:
-    resolution: {integrity: sha512-h1z/NN9ppS4YOKwSgBoopJlhm7tS2Qb/9Ld1HXjDpvvTE7mY0xVD8nllXs+RihD9uTGJISOIMzp18Eg0EApaMA==}
+  /@vercel/nft@0.26.4:
+    resolution: {integrity: sha512-j4jCOOXke2t8cHZCIxu1dzKLHLcFmYzC3yqAK6MfZznOL1QIJKd0xcFsXK3zcqzU7ScsE2zWkiMMNHGMHgp+FA==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
@@ -4178,16 +4183,16 @@ packages:
       - supports-color
     dev: true
 
-  /@vercel/node@3.0.19:
-    resolution: {integrity: sha512-geiAo2QjkNyWZSMbNKgaCvUvqg44tWDF0XDhEc6D+2H+2553Ea/RFpJNY7oSruuR1Rk43GUOKbxnVEDft/2JhQ==}
+  /@vercel/node@3.0.22:
+    resolution: {integrity: sha512-opPu9PHiQBEUEnAJa6GPUgbNz2dEi6abkDGV27wjrHErOZemRr687U+SVFoR54CQ3soKASbp/HGHggCfow0SVQ==}
     dependencies:
       '@edge-runtime/node-utils': 2.3.0
       '@edge-runtime/primitives': 4.1.0
       '@edge-runtime/vm': 3.2.0
       '@types/node': 14.18.33
-      '@vercel/build-utils': 7.7.0
+      '@vercel/build-utils': 7.8.0
       '@vercel/error-utils': 2.0.2
-      '@vercel/nft': 0.26.3
+      '@vercel/nft': 0.26.4
       '@vercel/static-config': 3.0.0
       async-listen: 3.0.0
       cjs-module-lexer: 1.2.3
@@ -4212,10 +4217,10 @@ packages:
     resolution: {integrity: sha512-EbAdKOZ0hPd5b59tLt7R3RQK1azNvuZTrCFRAVHNjqcIHNCmrSvjag5zBGn7Memkk8qWb3+CgBw9K/3LJKei0w==}
     dev: true
 
-  /@vercel/redwood@2.0.7:
-    resolution: {integrity: sha512-5BqSq9QP4kC3h9YmXJbuUM79EMErs2qs8MMBlw7r2zTLc2rqlUR6suzshn5Ei/Beqoj2pm7d+qrludEBVDBxkw==}
+  /@vercel/redwood@2.0.8:
+    resolution: {integrity: sha512-hAu7SYXDt+W7kscjtQ5NsuNflXH+QB5/xAdA6FRSS/e41lG6Xq6pqLMDobqq4BR7E2PpppVDw2DUx9KzPNoeEw==}
     dependencies:
-      '@vercel/nft': 0.26.3
+      '@vercel/nft': 0.26.4
       '@vercel/routing-utils': 3.1.0
       semver: 6.3.1
     transitivePeerDependencies:
@@ -4223,10 +4228,11 @@ packages:
       - supports-color
     dev: true
 
-  /@vercel/remix-builder@2.0.19:
-    resolution: {integrity: sha512-mODNijOpRGKtW09ksg01ju6tOt+C/fba71l1rrHi8I/ejPxpXHnfArNyO5SPRldyq5eHrhBMeePStQLVKNetug==}
+  /@vercel/remix-builder@2.1.2:
+    resolution: {integrity: sha512-CLIwxxcgGw3BdoDCGV2c98+BdPnmdYotzvJQ+PQbL6u+Nbo3zIAAspwVPP7RhL8OIPzDiFTW4GjeaaIRI+7dbw==}
     dependencies:
-      '@vercel/nft': 0.26.3
+      '@vercel/error-utils': 2.0.2
+      '@vercel/nft': 0.26.4
       '@vercel/static-config': 3.0.0
       ts-morph: 12.0.0
     transitivePeerDependencies:
@@ -4246,11 +4252,11 @@ packages:
     resolution: {integrity: sha512-Gfm8HDech41vf+EPleRzgoJUnDTJerKgckMm4KX0JT860gV9XBMSOWYH7eMWHmMza104+HRCWL7wT6OlpftF2Q==}
     dev: true
 
-  /@vercel/static-build@2.4.0:
-    resolution: {integrity: sha512-i+JDorkLGUVSoBrxbT86LL7L+TrBdL7uwVtqKA6S3QEQb8OfGOfvQKCjtbIRmplTxHWHWo3zFALrmFuB1AaubQ==}
+  /@vercel/static-build@2.4.2:
+    resolution: {integrity: sha512-TYEIzc33tsBFG3IhxmkTwonyhe0K7e951p4tvfoB6dkOQ6jRusHi5lxtJRiT+MQ8UzCmcaCrt8vEMYnakmH3qQ==}
     dependencies:
       '@vercel/gatsby-plugin-vercel-analytics': 1.0.11
-      '@vercel/gatsby-plugin-vercel-builder': 2.0.18
+      '@vercel/gatsby-plugin-vercel-builder': 2.0.20
       '@vercel/static-config': 3.0.0
       ts-morph: 12.0.0
     dev: true
@@ -5378,7 +5384,7 @@ packages:
       supports-color:
         optional: true
     dependencies:
-      ms: 2.1.3
+      ms: 2.1.1
     dev: true
 
   /debug@4.3.4:
@@ -9848,6 +9854,14 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
+  /semver@7.6.0:
+    resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /send@0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
     engines: {node: '>= 0.8.0'}
@@ -10638,64 +10652,64 @@ packages:
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
-  /turbo-darwin-64@1.11.3:
-    resolution: {integrity: sha512-IsOOg2bVbIt3o/X8Ew9fbQp5t1hTHN3fGNQYrPQwMR2W1kIAC6RfbVD4A9OeibPGyEPUpwOH79hZ9ydFH5kifw==}
+  /turbo-darwin-64@1.12.5:
+    resolution: {integrity: sha512-0GZ8reftwNQgIQLHkHjHEXTc/Z1NJm+YjsrBP+qhM/7yIZ3TEy9gJhuogDt2U0xIWwFgisTyzbtU7xNaQydtoA==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64@1.11.3:
-    resolution: {integrity: sha512-FsJL7k0SaPbJzI/KCnrf/fi3PgCDCjTliMc/kEFkuWVA6Httc3Q4lxyLIIinz69q6JTx8wzh6yznUMzJRI3+dg==}
+  /turbo-darwin-arm64@1.12.5:
+    resolution: {integrity: sha512-8WpOLNNzvH6kohQOjihD+gaWL+ZFNfjvBwhOF0rjEzvW+YR3Pa7KjhulrjWyeN2yMFqAPubTbZIGOz1EVXLuQA==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64@1.11.3:
-    resolution: {integrity: sha512-SvW7pvTVRGsqtSkII5w+wriZXvxqkluw5FO/MNAdFw0qmoov+PZ237+37/NgArqE3zVn1GX9P6nUx9VO+xcQAg==}
+  /turbo-linux-64@1.12.5:
+    resolution: {integrity: sha512-INit73+bNUpwqGZCxgXCR3I+cQsdkQ3/LkfkgSOibkpg+oGqxJRzeXw3sp990d7SCoE8QOcs3iw+PtiFX/LDAA==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64@1.11.3:
-    resolution: {integrity: sha512-YhUfBi1deB3m+3M55X458J6B7RsIS7UtM3P1z13cUIhF+pOt65BgnaSnkHLwETidmhRh8Dl3GelaQGrB3RdCDw==}
+  /turbo-linux-arm64@1.12.5:
+    resolution: {integrity: sha512-6lkRBvxtI/GQdGtaAec9LvVQUoRw6nXFp0kM+Eu+5PbZqq7yn6cMkgDJLI08zdeui36yXhone8XGI8pHg8bpUQ==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64@1.11.3:
-    resolution: {integrity: sha512-s+vEnuM2TiZuAUUUpmBHDr6vnNbJgj+5JYfnYmVklYs16kXh+EppafYQOAkcRIMAh7GjV3pLq5/uGqc7seZeHA==}
+  /turbo-windows-64@1.12.5:
+    resolution: {integrity: sha512-gQYbOhZg5Ww0bQ/bC0w/4W6yQRwBumUUnkB+QPo15VznwxZe2a7bo6JM+9Xy9dKLa/kn+p7zTqme4OEp6M3/Yg==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64@1.11.3:
-    resolution: {integrity: sha512-ZR5z5Zpc7cASwfdRAV5yNScCZBsgGSbcwiA/u3farCacbPiXsfoWUkz28iyrx21/TRW0bi6dbsB2v17swa8bjw==}
+  /turbo-windows-arm64@1.12.5:
+    resolution: {integrity: sha512-auvhZ9FrhnvQ4mgBlY9O68MT4dIfprYGvd2uPICba/mHUZZvVy5SGgbHJ0KbMwaJfnnFoPgLJO6M+3N2gDprKw==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo@1.11.3:
-    resolution: {integrity: sha512-RCJOUFcFMQNIGKSjC9YmA5yVP1qtDiBA0Lv9VIgrXraI5Da1liVvl3VJPsoDNIR9eFMyA/aagx1iyj6UWem5hA==}
+  /turbo@1.12.5:
+    resolution: {integrity: sha512-FATU5EnhrYG8RvQJYFJnDd18DpccDjyvd53hggw9T9JEg9BhWtIEoeaKtBjYbpXwOVrJQMDdXcIB4f2nD3QPPg==}
     hasBin: true
     optionalDependencies:
-      turbo-darwin-64: 1.11.3
-      turbo-darwin-arm64: 1.11.3
-      turbo-linux-64: 1.11.3
-      turbo-linux-arm64: 1.11.3
-      turbo-windows-64: 1.11.3
-      turbo-windows-arm64: 1.11.3
+      turbo-darwin-64: 1.12.5
+      turbo-darwin-arm64: 1.12.5
+      turbo-linux-64: 1.12.5
+      turbo-linux-arm64: 1.12.5
+      turbo-windows-64: 1.12.5
+      turbo-windows-arm64: 1.12.5
     dev: true
 
   /tween-functions@1.2.0:
@@ -10861,7 +10875,7 @@ packages:
     resolution: {integrity: sha512-cSb4bPFd5qgR7qr2jYAi0hlX9n5YKK2ONKkLFkxl+v/9BvC0sOpZjBHDBSXc5lWAf5ty9oZdRXytBIHzgUcerw==}
     engines: {node: '>=14.0'}
     dependencies:
-      '@fastify/busboy': 2.1.0
+      '@fastify/busboy': 2.1.1
     dev: true
 
   /unicode-canonical-property-names-ecmascript@2.0.0:
@@ -11055,22 +11069,22 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vercel@33.5.1:
-    resolution: {integrity: sha512-lvQWtsElC4ZxdCAO8xBqNEoqcX+i4xdWRIXbDMCfEahTOeaaHs8asV68iP7/PJ3zC/9Zr0kTyx0CUtiBJaXZ9A==}
+  /vercel@33.5.5:
+    resolution: {integrity: sha512-MsuUq6JCPGtRhrzHQ2MVRh8bxNkhVWDaYGPk3LGSEWKbJ0dkB1ic97s5uMEBSsp6QgUB8ZaGuosPDTDGgmPxXw==}
     engines: {node: '>= 16'}
     hasBin: true
     dependencies:
-      '@vercel/build-utils': 7.7.0
+      '@vercel/build-utils': 7.8.0
       '@vercel/fun': 1.1.0
       '@vercel/go': 3.0.5
       '@vercel/hydrogen': 1.0.2
-      '@vercel/next': 4.1.1
-      '@vercel/node': 3.0.19
+      '@vercel/next': 4.1.5
+      '@vercel/node': 3.0.22
       '@vercel/python': 4.1.1
-      '@vercel/redwood': 2.0.7
-      '@vercel/remix-builder': 2.0.19
+      '@vercel/redwood': 2.0.8
+      '@vercel/remix-builder': 2.1.2
       '@vercel/ruby': 2.0.5
-      '@vercel/static-build': 2.4.0
+      '@vercel/static-build': 2.4.2
       chokidar: 3.3.1
     transitivePeerDependencies:
       - '@swc/core'
