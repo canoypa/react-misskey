@@ -5,7 +5,7 @@
     "dev": "turbo dev"
   },
   "devDependencies": {
-    "turbo": "^1.12.5",
-    "vercel": "^33.5.5"
+    "turbo": "^1.13.2",
+    "vercel": "^34.0.0"
   }
 }
