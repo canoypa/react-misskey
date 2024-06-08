@@ -1,11 +1,13 @@
 {
   "private": true,
+  "name": "react-misskey-root",
+  "packageManager": "pnpm@8.15.1",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev"
   },
   "devDependencies": {
-    "turbo": "^1.13.2",
-    "vercel": "^34.0.0"
+    "turbo": "^2.0.3",
+    "vercel": "^34.2.6"
   }
 }
